@@ -1,0 +1,18 @@
+<group name="cisco_meraki">
+  <rule id="100002" level="0">
+    <decoded_as>cisco_meraki_flows</decoded_as>
+    <description>CISCO Meraki - Group of denied flows</description>
+  </rule>
+
+  <rule id="100003" level="10" ignore="5">
+    <if_sid>100002</if_sid>
+    <match>Group Policy Deny</match>
+    <description>Group Policy denied flow</description>
+  </rule>
+  
+  <rule id="100004" level="10" ignore="5">
+    <if_sid>100002</if_sid>
+    <match>deny</match>
+    <description>MX denied flow</description>
+  </rule>
+</group>

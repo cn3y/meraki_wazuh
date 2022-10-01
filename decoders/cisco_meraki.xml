@@ -1,0 +1,79 @@
+<decoder name="cisco_meraki_urls">
+    <prematch>urls src=</prematch>
+</decoder>
+
+<decoder name="cisco_meraki_urls">
+    <parent>cisco_meraki_urls</parent>
+    <regex>src=(\d+.\d+.\d+.\d+):(\d+)</regex>
+    <order>srcip,srcport</order>
+</decoder>
+
+<decoder name="cisco_meraki_urls">
+    <parent>cisco_meraki_urls</parent>
+    <regex>mac=(\S+)</regex>
+    <order>mac</order>
+</decoder>
+
+<decoder name="cisco_meraki_urls">
+    <parent>cisco_meraki_urls</parent>
+    <regex>dst=(\d+.\d+.\d+.\d+)</regex>
+    <order>dstip</order>
+</decoder>
+
+<decoder name="cisco_meraki_urls">
+    <parent>cisco_meraki_urls</parent>
+    <regex>request: (\S+ \S+)</regex>
+    <order>request</order>
+</decoder>
+
+<decoder name="cisco_meraki_urls">
+    <parent>cisco_meraki_urls</parent>
+    <regex>request: \S+ (\S+)</regex>
+    <order>url</order>
+</decoder>
+
+<decoder name="cisco_meraki_flows">
+    <prematch>flows src=</prematch>
+</decoder>
+
+<decoder name="cisco_meraki_flows">
+    <parent>cisco_meraki_flows</parent>
+    <regex>src=(\d+.\d+.\d+.\d+)</regex>
+    <order>srcip</order>
+</decoder>
+
+<decoder name="cisco_meraki_flows">
+    <parent>cisco_meraki_flows</parent>
+    <regex>sport=(\S+)</regex>
+    <order>srcport</order>
+</decoder>
+
+<decoder name="cisco_meraki_flows">
+    <parent>cisco_meraki_flows</parent>
+    <regex>mac=(\S+)</regex>
+    <order>mac</order>
+</decoder>
+
+<decoder name="cisco_meraki_flows">
+    <parent>cisco_meraki_flows</parent>
+    <regex>dst=(\S+)</regex>
+    <order>dstip</order>
+</decoder>
+
+<decoder name="cisco_meraki_flows">
+    <parent>cisco_meraki_flows</parent>
+    <regex>dport=(\S+)</regex>
+    <order>dstport</order>
+</decoder>
+
+<decoder name="cisco_meraki_flows">
+    <parent>cisco_meraki_flows</parent>
+    <regex>protocol=(\S+)</regex>
+    <order>protocol</order>
+</decoder>
+
+<decoder name="cisco_meraki_flows">
+    <parent>cisco_meraki_flows</parent>
+    <regex>pattern: (\S\.*)</regex>
+    <order>action</order>
+</decoder>
